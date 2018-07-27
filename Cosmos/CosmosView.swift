@@ -313,10 +313,11 @@ Shows: ★★★★☆ (123)
     
     if calculatedTouchRating == previousRatingForDidTouchCallback {
       // Do not call didTouchCosmos if rating has not changed
-      return
+//      return
+        rating = 0
     }
     
-    didTouchCosmos?(calculatedTouchRating)
+    didTouchCosmos?(rating)
     previousRatingForDidTouchCallback = calculatedTouchRating
   }
   
