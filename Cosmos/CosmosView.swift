@@ -318,7 +318,7 @@ Shows: ★★★★☆ (123)
     }
     
     didTouchCosmos?(rating)
-    previousRatingForDidTouchCallback = calculatedTouchRating
+    previousRatingForDidTouchCallback = rating
   }
   
   private var previousRatingForDidTouchCallback: Double = -123.192
