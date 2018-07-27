@@ -132,6 +132,8 @@ Shows: ★★★★☆ (123)
     // ------------
 
     updateAccessibility()
+
+    previousRatingForDidTouchCallback = rating
   }
   
   /**
