@@ -132,8 +132,6 @@ Shows: ★★★★☆ (123)
     // ------------
 
     updateAccessibility()
-
-    previousRatingForDidTouchCallback = rating
   }
   
   /**
@@ -309,14 +307,12 @@ Shows: ★★★★☆ (123)
   func onDidTouch(_ locationX: CGFloat) {
     let calculatedTouchRating = CosmosTouch.touchRating(locationX, settings: settings)
     
-    if settings.updateOnTouch {
-      rating = calculatedTouchRating
-    }
-    
-    if calculatedTouchRating == previousRatingForDidTouchCallback {
+    if calculatedTouchRating == rating && settings.updateOnTouch {
       // Do not call didTouchCosmos if rating has not changed
 //      return
         rating = 0
+    } else if settings.updateOnTouch {
+        rating = calculatedTouchRating
     }
     
     didTouchCosmos?(rating)
